@@ -1,23 +1,26 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
-  //TODO: Implement LoginController
+  RxString username = "".obs;
+  RxBool isChangeButton = false.obs;
 
-  final count = 0.obs;
+  TextEditingController usernameC = TextEditingController();
+  TextEditingController passwordC = TextEditingController();
+
   @override
   void onInit() {
+    // TODO: implement onInit
+    usernameC = TextEditingController();
+    passwordC = TextEditingController();
     super.onInit();
   }
 
   @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
   void onClose() {
+    // TODO: implement onClose
+    usernameC.dispose();
+    passwordC.dispose();
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
