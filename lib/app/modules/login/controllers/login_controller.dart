@@ -13,8 +13,8 @@ class LoginController extends GetxController {
 
   moveToHome(BuildContext context) async {
     if (registerFormKey.currentState!.validate()) {
-      isChangeButton.value = true;
       isChangeButton.toggle();
+      print(isChangeButton.value);
       await Future.delayed(Duration(seconds: 1));
       Get.toNamed(Routes.HOME);
     }

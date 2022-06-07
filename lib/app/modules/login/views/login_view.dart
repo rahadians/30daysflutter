@@ -96,33 +96,41 @@ class LoginView extends GetView<LoginController> {
                             SizedBox(
                               height: 40,
                             ),
-                            InkWell(
-                              onTap: () async {
-                                controller.moveToHome(context);
-                              },
-                              child: Obx(
-                                () => AnimatedContainer(
-                                  duration: Duration(seconds: 1),
-                                  decoration: BoxDecoration(
-                                      // shape: controller.isChangeButton.value
-                                      //     ? BoxShape.circle
-                                      //     : BoxShape.rectangle,
-                                      borderRadius: BorderRadius.circular(
-                                          (controller.isChangeButton.value)
-                                              ? 20
-                                              : 8),
-                                      color: Colors.deepPurple),
-                                  alignment: Alignment.center,
-
-                                  // width: (controller.isChangeButton.value) ? 50 : 150,
-                                  height: 50,
-
-                                  child: Text(
-                                    "Login",
-                                    style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontWeight: FontWeight.bold),
+                            Material(
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.circular(
+                                  controller.isChangeButton.value ? 50 : 8),
+                              child: InkWell(
+                                splashColor: Colors.red,
+                                onTap: () async {
+                                  controller.moveToHome(context);
+                                },
+                                child: Obx(
+                                  () => AnimatedContainer(
+                                    duration: Duration(seconds: 1),
+                                    width: (controller.isChangeButton.value)
+                                        ? 50
+                                        : 150,
+                                    height: 50,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(
+                                            (controller.isChangeButton.value)
+                                                ? 20
+                                                : 8),
+                                        color: Colors.deepPurple),
+                                    child: controller.isChangeButton.value
+                                        ? Icon(
+                                            Icons.done,
+                                            color: Colors.white,
+                                          )
+                                        : Text(
+                                            "Login",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18),
+                                          ),
                                   ),
                                 ),
                               ),
