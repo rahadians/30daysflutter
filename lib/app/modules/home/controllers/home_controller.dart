@@ -1,23 +1,12 @@
+import 'package:flutter_zoom_drawer/config.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  final zoomDrawerController = ZoomDrawerController();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void toggleDrawer() {
+    print("Toggle drawer");
+    zoomDrawerController.toggle?.call();
+    update();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

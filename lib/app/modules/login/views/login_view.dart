@@ -12,6 +12,7 @@ class LoginView extends GetView<LoginController> {
 
     return SafeArea(
       child: Scaffold(
+        
           // floatingActionButton: FloatingActionButton(onPressed: () => get. )),
           backgroundColor: Colors.white,
           body: SingleChildScrollView(

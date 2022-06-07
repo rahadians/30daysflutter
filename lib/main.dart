@@ -7,12 +7,10 @@ import 'app/routes/app_pages.dart';
 void main() {
   runApp(
     GetMaterialApp(
-      // themeMode: ThemeMode.light,
-      // theme: ThemeData(
-      //     primarySwatch: Colors.deepPurple,
-      //     fontFamily: GoogleFonts.lato().fontFamily,
-      //     primaryTextTheme: GoogleFonts.latoTextTheme()),
-      // darkTheme: ThemeData(brightness: Brightness.dark),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       debugShowCheckedModeBanner: false,
       title: "Flutter 30 Hari",
       initialRoute: AppPages.INITIAL,
