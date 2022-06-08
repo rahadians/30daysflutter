@@ -13,12 +13,16 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 194, 169, 238),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
+        
         title: Text('Home Page'),
         centerTitle: true,
         leading: IconButton(
           onPressed: () => controller.toggleDrawer(),
           icon: Icon(Icons.menu),
+          color: Colors.deepPurple,
         ),
       ),
       body: SafeArea(
@@ -30,7 +34,7 @@ class HomeView extends GetView<HomeController> {
           borderRadius: 24.0,
           showShadow: true,
           angle: -12.0,
-          drawerShadowsBackgroundColor: Color.fromARGB(255, 252, 246, 246),
+          drawerShadowsBackgroundColor: Colors.white,
           slideWidth: MediaQuery.of(context).size.width * 0.65,
           openCurve: Curves.fastOutSlowIn,
           closeCurve: Curves.bounceIn,
