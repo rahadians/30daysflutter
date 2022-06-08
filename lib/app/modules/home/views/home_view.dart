@@ -13,6 +13,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 194, 169, 238),
         title: Text('Home Page'),
         centerTitle: true,
         leading: IconButton(
@@ -20,17 +21,20 @@ class HomeView extends GetView<HomeController> {
           icon: Icon(Icons.menu),
         ),
       ),
-      body: ZoomDrawer(
-        controller: controller.drawerController,
-        menuScreen: MenuScreen(),
-        mainScreen: MainScreen(),
-        borderRadius: 24.0,
-        showShadow: true,
-        angle: -12.0,
-        drawerShadowsBackgroundColor: Color.fromARGB(255, 187, 18, 18),
-        slideWidth: MediaQuery.of(context).size.width * 0.65,
-        openCurve: Curves.fastOutSlowIn,
-        closeCurve: Curves.bounceIn,
+      body: SafeArea(
+        child: ZoomDrawer(
+          mainScreenOverlayColor: Colors.amber,
+          controller: controller.drawerController,
+          menuScreen: MenuScreen(),
+          mainScreen: MainScreen(),
+          borderRadius: 24.0,
+          showShadow: true,
+          angle: -12.0,
+          drawerShadowsBackgroundColor: Color.fromARGB(255, 252, 246, 246),
+          slideWidth: MediaQuery.of(context).size.width * 0.65,
+          openCurve: Curves.fastOutSlowIn,
+          closeCurve: Curves.bounceIn,
+        ),
       ),
     );
   }

@@ -8,7 +8,7 @@ class MainScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      color: Color.fromARGB(255, 235, 98, 98),
+      color: Color.fromARGB(26, 158, 155, 155),
       child: Center(
         child: ElevatedButton(
           onPressed: () => controller.toggleDrawer(),

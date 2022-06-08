@@ -9,11 +9,14 @@ class MenuScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        decoration: BoxDecoration(color: Colors.grey),
+        decoration: BoxDecoration(color: Colors.deepPurple),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             DrawerHeader(
+                decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.circular(15)),
                 padding: EdgeInsets.zero,
                 child: UserAccountsDrawerHeader(
                   margin: EdgeInsets.zero,
