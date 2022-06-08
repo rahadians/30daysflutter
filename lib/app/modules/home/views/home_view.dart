@@ -12,22 +12,26 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: GetBuilder<HomeController>(
-          builder: (_) => ZoomDrawer(
-                controller: _.zoomDrawerController,
-                menuScreen: MenuScreen(),
-                mainScreen: MainScreen(),
-                borderRadius: 24.0,
-                showShadow: true,
-                angle: -12.0,
-                drawerShadowsBackgroundColor: Colors.grey,
-                slideWidth: MediaQuery.of(context).size.width * 0.65,
-              )),
-      drawer: SafeArea(
-        child: MenuDrawer(),
+      appBar: AppBar(
+        title: Text('Home Page'),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () => controller.toggleDrawer(),
+          icon: Icon(Icons.menu),
+        ),
+      ),
+      body: ZoomDrawer(
+        controller: controller.drawerController,
+        menuScreen: MenuScreen(),
+        mainScreen: MainScreen(),
+        borderRadius: 24.0,
+        showShadow: true,
+        angle: -12.0,
+        drawerShadowsBackgroundColor: Color.fromARGB(255, 187, 18, 18),
+        slideWidth: MediaQuery.of(context).size.width * 0.65,
+        openCurve: Curves.fastOutSlowIn,
+        closeCurve: Curves.bounceIn,
       ),
     );
   }
 }
-
