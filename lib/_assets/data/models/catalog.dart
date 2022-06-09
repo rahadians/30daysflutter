@@ -10,6 +10,9 @@ TblCatalog tblCatalogFromJson(String str) =>
 String tblCatalogToJson(TblCatalog data) => json.encode(data.toJson());
 
 class TblCatalog {
+
+
+  
   TblCatalog({
     required this.id,
     required this.name,
