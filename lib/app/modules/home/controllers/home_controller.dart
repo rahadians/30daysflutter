@@ -34,12 +34,19 @@ class HomeController extends GetxController {
       allList.value = List.from(dataList);
 
       allList.refresh();
-      print(allList.value);
+      print(allList.value.length);
     } catch (err) {
       print(err);
     }
 
     isLoading.value = false;
     Get.back();
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    getAllList();
   }
 }

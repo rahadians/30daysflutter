@@ -1,17 +1,31 @@
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:fluttertigapuluh/app/modules/home/controllers/home_controller.dart';
+import 'package:flutter/material.dart';
 
-// import 'package:get/get.dart';
+import '../../../../../_assets/data/models/catalog.dart';
 
-// class ItemWidget extends GetView<HomeController> {
+class Item_widget extends StatelessWidget {
+  const Item_widget({
+    Key? key,
+    required this.allData,
+  }) : super(key: key);
 
+  final TblCatalog allData;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final item;
-
-//   const ItemWidget({required Key key, required this.item}):assert(item!=null),super(key: key)
-//     return Container();
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 20,
+      shadowColor: Colors.black26,
+      child: ListTile(
+        onTap: () {},
+        leading: Image.network(allData.image),
+        title: Text(allData.name),
+        subtitle: Text(allData.desc),
+        trailing: Text(
+          "Rp. ${allData.price.toString()}",
+          textScaleFactor: 1.5,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}

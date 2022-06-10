@@ -8,15 +8,22 @@ import '../widgets/item_widget.dart';
 class MainScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
+    // final dummyListe=List.generate(50,((index) => TblCatalog.items[0]))
     return Scaffold(
-      body: ListView.builder(
-          itemCount: controller.allList.value.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-                // child: Text(controller.allList.value[]),
-
-                );
-          }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => controller.getAllList(),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: (controller.allList.value.length == null)
+            ? Text("Data Kosong")
+            : ListView.builder(
+                itemCount: controller.allList.value.length,
+                itemBuilder: (BuildContext context, int index) {
+                  TblCatalog allData = controller.allList[index];
+                  return Item_widget(allData: allData);
+                }),
+      ),
     );
   }
 }

@@ -16,7 +16,6 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
-        
         title: Text('Home Page'),
         centerTitle: true,
         leading: IconButton(
@@ -25,20 +24,18 @@ class HomeView extends GetView<HomeController> {
           color: Colors.deepPurple,
         ),
       ),
-      body: SafeArea(
-        child: ZoomDrawer(
-          mainScreenOverlayColor: Colors.amber,
-          controller: controller.drawerController,
-          menuScreen: MenuScreen(),
-          mainScreen: MainScreen(),
-          borderRadius: 24.0,
-          showShadow: true,
-          angle: -12.0,
-          drawerShadowsBackgroundColor: Colors.white,
-          slideWidth: MediaQuery.of(context).size.width * 0.65,
-          openCurve: Curves.fastOutSlowIn,
-          closeCurve: Curves.bounceIn,
-        ),
+      body: ZoomDrawer(
+        mainScreenOverlayColor: Colors.amber,
+        controller: controller.drawerController,
+        menuScreen: MenuScreen(),
+        mainScreen: MainScreen(),
+        borderRadius: 24.0,
+        showShadow: true,
+        angle: -12.0,
+        drawerShadowsBackgroundColor: Colors.white,
+        slideWidth: MediaQuery.of(context).size.width * 0.65,
+        openCurve: Curves.fastOutSlowIn,
+        closeCurve: Curves.bounceIn,
       ),
     );
   }
